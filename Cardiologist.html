@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    background-color: #a5c9ed;
+
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.heading {
+    padding: 40px 20px;
+}
+
+.heading h1 {
+    margin-bottom: 10px;
+}
+
+.heading h3 {
+    color: #666;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+table {
+    border-spacing: 30px;
+}
+
+.card1, .card2 {
+    background: rgb(138, 136, 194);
+    width: 280px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card1:hover, .card2:hover {
+    transform: scale(1.05);
+}
+
+.card1 img, .card2 img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card1 a, .card2 a {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+</style>
+<body>
+    <header><h1>AR booking</h1></header>
+    <section>
+        <div class="heading">
+            <h1>Available Doctors</h1>
+            <h1>❤️ Cardiologist (Heart Problem)</h1>
+            <h3>Select a doctor to proceed with appointment booking.</h3>
+        </div>
+    </section>
+    <section>
+        <div class="hero">
+            <table>
+                <tr>
+                    <td>
+                        <div class="card1">
+                            <a href="Cardiologist_doctor1.html">
+                                <img src="img/cd1.jpg">
+                                <h1>Dr. Rajesh Patel</h1>
+                                <h3>Specialization: Cardiologist</h3>
+                                <h3>Experience: 12 Years</h3>
+                                <h3>Available Time: 10:00 AM – 2:00 PM</h3>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card2">
+                            <a href="Cardiologist_doctor2.html">
+                                <img src="img/cd2.jpg">
+                                <h1>Dr. Mehul Shah</h1>
+                                <h3>Specialization: Cardiologist</h3>
+                                <h3>Experience: 8 Years</h3>
+                                <h3>Available Time: 3:00 PM – 7:00 PM</h3>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <footer>        <h1>by aashish</h1>
+</footer>
+</body>
+</html>

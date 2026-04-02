@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+    background-color: #a5c9ed;
+
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #0d3b66;
+    color: white;
+    padding: 20px;
+}
+
+.heading {
+    padding: 30px 20px;
+}
+
+.heading img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 15px ;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+form {
+    background: rgb(197, 196, 241);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+form td {
+    padding: 12px;
+}
+
+input {
+    width: 220px;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+
+.btn {
+    margin-top: 20px;
+}
+
+#sub {
+    background-color: #0d3b66;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#sub:hover {
+    background-color: #144a86;
+}
+
+.show {
+    margin-top: 40px;
+}
+
+.show table {
+    width: 90%;
+    margin: auto;
+    background: white;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.show td {
+    padding: 10px;
+}
+
+.show tr {
+    color: rgb(3, 3, 3);
+    font-weight: bold;
+}
+
+.btntable {
+    margin-top: 20px;
+}
+
+.btntable button {
+    background-color: #0d3b66;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s ease;
+}
+
+.btntable button:hover {
+    background-color: #144a86;
+}
+
+footer {
+    background-color: #0d3b66;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+</style>
+<body>
+    <header><h1>AR booking</h1></header>
+    <section>
+        <div class="heading">
+            <h1>Book Appointment</h1>
+            <img src="img/dd2.jpg">
+            <h2>Dr. PR vaghera</h2>
+            <h3>Please fill in the details below to confirm your appointment.</h3>
+        </div>
+    </section>
+    <section>
+        <div class="hero">
+            <form>
+                <table border="1">
+                    <tr>
+                        <td><label>Patient Name</label></td>
+                        <td><input type="text" placeholder="enter your name" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Mobile Number</label></td>
+                        <td><input type="number" placeholder="enter your moble number" id="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Appointment Date</label></td>
+                        <td><input type="date" placeholder="date" id="date"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Appointment Time</label></td>
+                        <td><input type="time" placeholder="enter time" id="time"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Problem Description</label></td>
+                        <td><input type="text" placeholder="enter your problem" id="problem"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="btn">
+            <button id="sub">SUBMIT</button>
+        </div>
+    </section>
+      <section class="display">
+        <div class="show">
+            <table border="1">
+                <thead>
+                    <tr>
+                    <td>Patient Name</td>
+                    <td>Mobile Number</td>
+                    <td>Appointment Date</td>
+                    <td>Appointment Time</td>
+                    <td>Problem Description</td>
+                    </tr>
+                </thead>
+                <tbody id="tablebody"></tbody>
+            </table>
+        </div>
+    </section>
+    </section>
+    <footer>        <h1>by aashish</h1>
+</footer>
+    <script>
+    
+        let appointments = [];
+
+        document.getElementById("sub").addEventListener("click", function aaa() {
+
+        let nam=document.getElementById("name").value;
+        let no=document.getElementById("number").value;
+        let date=document.getElementById("date").value;
+        let time=document.getElementById("time").value;
+        let pro=document.getElementById("problem").value;
+
+        
+            let obj = {
+            name: nam,
+            mobile: no,
+            date: date,
+            time: time,
+            problem: pro
+        };
+        
+        appointments.push(obj);
+        showAll();
+        document.querySelector("form").reset();
+
+        });
+        
+function render(data){
+    let tbody = document.getElementById("tablebody");
+    tbody.innerHTML = "";
+
+    data.forEach(function(item){
+        tbody.innerHTML += `
+        <tr>
+            <td>${item.name}</td>
+            <td>${item.mobile}</td>
+            <td>${item.date}</td>
+            <td>${item.time}</td>
+            <td>${item.problem}</td>
+        </tr>
+        `;
+    });
+}
+function showAll(){
+    render(appointments);
+}
+
+    </script>
+</body>
+</html>
